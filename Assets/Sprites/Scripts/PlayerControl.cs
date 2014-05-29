@@ -3,26 +3,42 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
 
+	public Players playerNum;
+	
 	private float distance = 3f;
-	private float rottingdistance = 30f;
-	private float kihirmirglhil;
+	private float y;
+	private float x;
+	
+	float anglePrev = 0f;
+	float angleNext = 0f;
+	float rotationDegRelative = 0f;
 
+	public enum Players{
+		Player1,
+		Player2,
+		Player3,
+		Player4
+	}
+	
+	
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		x = Input.GetAxis(playerNum.ToString() + "x");
+		y = Input.GetAxis(playerNum.ToString() + "y");
 
-		if ( Input.GetAxis ("Vertical1")!=0){
-			transform.position = new Vector3 ( transform.position.x, transform.position.y+Input.GetAxis("Vertical1") * -distance * Time.deltaTime, transform.position.z );
+		//movement
+		if (  x!=0 || y!=0 ){
+			transform.position = new Vector3 ( transform.position.x + x * distance * Time.deltaTime, transform.position.y+ y * -distance * Time.deltaTime, transform.position.z );
 		}
-		if ( Input.GetAxis("Horizontal1") != 0 ){
-			transform.position = new Vector3 ( transform.position.x + Input.GetAxis("Horizontal1") * distance * Time.deltaTime, transform.position.y, transform.position.z );
-			kihirmirglhil=-Input.GetAxis("Horizontal1")/Mathf.Abs(Input.GetAxis("Horizontal1"));
-			if ( transform.eulerAngles.z<90 || transform.eulerAngles.z>270)
-				transform.Rotate(0, 0, 90*kihirmirglhil);
-		}
+		
+		//rotation
+		if (x!=0 && y !=0) angleNext = Mathf.Atan2(-x,-y) * Mathf.Rad2Deg;
+		transform.eulerAngles = new Vector3(transform.eulerAngles.x ,transform.eulerAngles.y, angleNext);
+
 	}
 }
