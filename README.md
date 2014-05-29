@@ -1,0 +1,4 @@
+SnakeMechanic
+=============
+
+init
