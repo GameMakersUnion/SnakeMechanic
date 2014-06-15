@@ -10,11 +10,11 @@ SnakeMechanic
 Requires controllers, which Unity automatically detects once installed correctly in Windows.
 
 ###Credits
-Ian - coder
-Jabir - idea of snakes + mice + coding
-Morgan - quick art
-Brian - initial rotation algorithm
-Zack - corrected rotation code
+Ian - coder,
+Jabir - idea of snakes + mice + coding,
+Morgan - quick art,
+Brian - initial rotation algorithm,
+Zack - corrected rotation code,
 Matthew - deadzone callibration
 
 
