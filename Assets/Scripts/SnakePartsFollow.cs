@@ -3,17 +3,20 @@ using System.Collections;
 
 public class SnakePartsFollow : MonoBehaviour {
 
-	private Transform head;
+	public Transform head;
 	public Transform body;
 	public Transform tail;
 
 	// Use this for initialization
 	void Start () {
-		head = transform;
+		//head = transform;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+
+		/*
 		Vector3 deadzone = new Vector3( 2,2,2 );
 		Vector3 diffToHead = body.Find("pivotFront").position - head.Find("pivot").position; 
 		//Debug.Log ( Mathf.Abs(diffToHead.x) + ", " + Mathf.Abs(diffToHead.y) + ", " + Mathf.Abs(diffToHead.z) );
@@ -30,6 +33,8 @@ public class SnakePartsFollow : MonoBehaviour {
 		if (x!=0 && y !=0) angleNext = Mathf.Atan2(x,-y) * Mathf.Rad2Deg;
 		//Debug.Log ( y + ", " + x + ", " + angleNext );
 		body.eulerAngles = new Vector3(body.eulerAngles.x ,body.eulerAngles.y, angleNext);
+		*/
+
 
 
 
