@@ -16,7 +16,7 @@ public class SnakePartsFollow : MonoBehaviour {
 	void Update () {
 		Vector3 deadzone = new Vector3( 2,2,2 );
 		Vector3 diffToHead = body.Find("pivotFront").position - head.Find("pivot").position; 
-		Debug.Log ( Mathf.Abs(diffToHead.x) + ", " + Mathf.Abs(diffToHead.y) + ", " + Mathf.Abs(diffToHead.z) );
+		//Debug.Log ( Mathf.Abs(diffToHead.x) + ", " + Mathf.Abs(diffToHead.y) + ", " + Mathf.Abs(diffToHead.z) );
 		if ( Mathf.Abs(diffToHead.x) > deadzone.x || Mathf.Abs(diffToHead.y) > deadzone.y ) body.position -= diffToHead/5;
 
 		//determine angle to head
